@@ -42,9 +42,10 @@ const OrdersManagement = () => {
   const handleDelivered = (id) => {
     const update = { delivered: true };
     dispatch(updateOrderDelivered(id, update));
-    window.location.reload(false);
+    // window.location.reload(false);
   };
   // console.log('undelivered',undelivered)
+  console.log('orderDetail',orderDetail)
   return (
     <div>
       <div id="ordenes-pendinetes" className="orders_undelivered">
@@ -58,8 +59,8 @@ const OrdersManagement = () => {
           <div className="order_number">
             <div>ID</div>
             <select onClick={(e) => handleOrderDetail(e, "undelivered")} className="select__order">
-              <option desabled >Id</option>
-              {undelivered ? (
+              <option  >Id</option>
+              {undelivered && (
                 undelivered.map((order, index) => (
                   <option
                     name="undelivered"
@@ -69,9 +70,11 @@ const OrdersManagement = () => {
                     {order.id}
                   </option>
                 ))
-              ) : (
-                <p>no hay ordernes de compra</p>
-              )}
+              ) 
+              // : (
+              //   <>no hay ordernes de compra</>
+              // )
+              }
             </select>
           </div>
           <div className="order_info">
@@ -115,9 +118,9 @@ const OrdersManagement = () => {
             <div>ID</div>
             {/* <select onChange={() => handleOrderDetail(order.id, "delivered")} className="select__order"> */}
             <select onChange={(e) => handleOrderDetail(e, "delivered")} className="select__order">
-            <option desabled >Id</option>
+            <option  >Id</option>
 
-              {delivered ? (
+              {delivered && (
                 delivered.map((order, index) => (
                   <option
                     name="delivered"
@@ -127,9 +130,11 @@ const OrdersManagement = () => {
                     {order.id}
                   </option>
                 ))
-              ) : (
-                <p>no hay ordernes de compra</p>
-              )}
+              ) 
+              // : (
+              //   <>no hay ordernes de compra</>
+              // )
+              }
             </select>
           </div>
           <div className="order_info">
