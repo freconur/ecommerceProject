@@ -28,10 +28,10 @@ const SideBarDashBoard = () => {
             </li>
           </ul>
         </li>
-        <li>
+        {/* <li>
           Mis pedidos
         </li>
-        <li>salir</li>
+        <li>salir</li> */}
       </ul>
     </div>
   );

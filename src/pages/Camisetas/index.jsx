@@ -15,7 +15,6 @@ const Camisetas = () => {
   useEffect(() => {
     dispatch(setCamisetas());
     const clist = document.getElementsByTagName("input");
-    console.log(clist);
     for (const el of clist) {
       el.checked = checkboxClean;
     }

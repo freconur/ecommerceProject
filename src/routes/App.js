@@ -6,13 +6,11 @@ import { Zapatillas } from "../pages/Zapatillas";
 import Layout from "../Containers/Layout";
 import { Camisetas } from "../pages/Camisetas";
 import { DetailProduct } from "../pages/DetailProduct";
-import Prueba from "../pages/prueba/Prueba";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Cart from "../pages/Cart/Cart";
 import { SearchPage } from "../pages/SearchPage";
 import { MyOrders } from "../pages/MyOrders";
-// import AuthProvider from "../../context/AuthContext";
 const App = () => {
   return (
     <BrowserRouter>
@@ -25,7 +23,6 @@ const App = () => {
           <Route exact path="/mis-pedidos" element={<MyOrders />} />
           <Route
             exact
-            // path="/zapatillas/:productId"
             path="/product-detail/:productId"
             element={<DetailProduct />}
           />

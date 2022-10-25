@@ -91,6 +91,7 @@
   width: 30px;
   margin: auto;
   line-height: 30px;
+  text-transform: capitalize;
 }
 .navbar_button {
   display: grid;

@@ -16,7 +16,6 @@ const Pantalones = () => {
   const onchangeOrderName = (e) => {
     return dispatch(setSortByName(e.target.value));
   };
-  // console.log('zapatitoRoto',zapatillas)
   return (
     <div className="products">
       <div className="navbarLeft__container">

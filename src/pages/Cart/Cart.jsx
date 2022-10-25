@@ -68,7 +68,6 @@ const Cart = () => {
   });
   const handleAmount = (e) => {
     const id = e.target.value;
-    console.log('id',id)
     if (e.target.name === "plus") {
       let amount;
       kaka.find((item) => {

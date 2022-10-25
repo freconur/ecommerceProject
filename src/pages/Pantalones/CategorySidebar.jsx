@@ -12,13 +12,11 @@ const CategorySidebar = ({
   generos,
   pantalones,
 }) => {
-  // const { pantalones } = useSelector(rootReducer => rootReducer.productsReducer)
   const dispatch = useDispatch();
   const handleClickCategory = (e) => {
     dispatch(setProductsFilterByGenero(e.target.value))
   };
 
-  console.log("pantalones", pantalones);
   return (
     <li className="list">
       <div

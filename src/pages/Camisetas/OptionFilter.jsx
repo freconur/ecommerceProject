@@ -39,7 +39,6 @@ const OptionFilter = ({camisetas,setCheckboxClean}) => {
       const currentIndex = checkValue.indexOf(value);
       if (currentIndex === -1) {
         newCheckedColor.push(value);
-        console.log("newCheckedColor", newCheckedColor);
       } else {
         newCheckedColor.splice(currentIndex, 1);
       }

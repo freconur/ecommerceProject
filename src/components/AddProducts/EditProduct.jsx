@@ -16,7 +16,6 @@ const EditProduct = () => {
 
   const [inputValue, setInputValue] = useState(0);
   const [inputValueUpdate, setInputValueUpdate] = useState([]);
-  //   const [desOrDis, setDesOrDis] = useState(disabled);
   const { zapatillasDetail, marcas, categories, colors, generos } = useSelector(
     (rootReducer) => rootReducer.productsReducer
   );

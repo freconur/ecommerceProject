@@ -1,7 +1,6 @@
 import React from 'react'
 
 const ItemsOrdersUser = ({order}) => {
-  console.log('order',order)
   return (
     <ul className='info_order__user'>
       {

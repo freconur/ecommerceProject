@@ -19,12 +19,10 @@ const CategorySidebar = ({
   const navigation = useNavigate()
   const dispatch = useDispatch();
   const handleClickCategory = (e) => {
-    // window.location.href = window.location.href
-    setCheckboxValue(!checkboxValue)//false
+    setCheckboxValue(!checkboxValue)
     let value = false
-    setCheckboxClean(value) //
+    setCheckboxClean(value) 
     dispatch(setProductsFilterByGenero(e.target.value))
-    // setCheckboxClean(null) //
     forceUpdate()
   };
   return (

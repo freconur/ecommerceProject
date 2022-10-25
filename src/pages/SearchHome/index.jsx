@@ -5,7 +5,6 @@ import { productsReducer } from '../../redux/reducer/productsReducer'
 const SearchHome = () => {
     const { products } = useSelector(rootReducer => rootReducer.productsReducer)
     const dispatch = useDispatch()
-    console.log('products',products)
     // useEffect(() => {
     //     dispatch(productsReducer())
     // })

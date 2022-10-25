@@ -1,7 +1,6 @@
 import React from "react";
 
 const ItemsOrderDelivered = ({ items }) => {
-  console.log("items", items);
   return (
     <ul className="items_order">
       {items &&

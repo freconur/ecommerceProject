@@ -7,7 +7,6 @@ import "../Camisetas/products.css";
 import OptionFilter from "./OptionFilter";
 import { NotFound } from "../../components/NotFound";
 const Zapatillas = () => {
-  // const { zapatillas } = useSelector((state) => state);
   const {zapatillas} = useSelector(rootReducer => rootReducer.productsReducer);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -16,7 +15,6 @@ const Zapatillas = () => {
   const onchangeOrderName = (e) => {
     return dispatch(setSortByName(e.target.value));
   };
-  console.log('zapatitoRoto',zapatillas)
   return (
     <div className="products">
       <div className="navbarLeft__container">

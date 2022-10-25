@@ -15,9 +15,7 @@ const Category = () => {
         <section className="category__List">
           {categories &&
             categories.map((category, index) => (
-              // <li>
                 <CategoryCard key={index} category={category} />
-              // </li>
             ))}
         </section>
     </div>

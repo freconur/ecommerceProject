@@ -14,11 +14,6 @@ import { OrdersManagement } from "./OrdersManagement";
 const AddProducts = () => {
   const [formData, setFormData] = useState([]);
   const { generos,marcas, colors, categories } = useSelector((rootReducer) => rootReducer.productsReducer);
-  // const { marcas } = useSelector((rootReducer) => rootReducer.productsReducer);
-  // const { colors } = useSelector((rootReducer) => rootReducer.productsReducer);
-  // const { categories } = useSelector(
-  //   (rootReducer) => rootReducer.productsReducer
-  // );
   const dispatch = useDispatch();
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -31,10 +26,8 @@ const AddProducts = () => {
     dispatch(setCategories());
   }, []);
 
-  // console.log("formData", formData);
   return (
     <div className="settings_products__container">
-      {/* <h2>agregando productos</h2> */}
       <AddProductsForm
         formData={formData}
         setFormData={setFormData}

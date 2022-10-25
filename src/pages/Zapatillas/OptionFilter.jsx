@@ -41,7 +41,6 @@ const OptionFilter = ({zapatillas}) => {
       const currentIndex = checkValue.indexOf(value);
       if (currentIndex === -1) {
         newCheckedColor.push(value);
-        console.log("newCheckedColor", newCheckedColor);
       } else {
         newCheckedColor.splice(currentIndex, 1);
       }
@@ -57,9 +56,6 @@ const OptionFilter = ({zapatillas}) => {
       setCheckValueMarca(newCheckedMarcas);
       dispatch(setMarcaFilter(newCheckedMarcas, newCheckedColor));
     }
-    // if (newCheckedColor.length === 0 && newCheckedMarcas.length === 0) {
-    //   return dispatch(setZapatillas()), dispatch(setMarcas());
-    // }
   };
   return (
     <React.Fragment>
