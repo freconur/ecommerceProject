@@ -49,9 +49,10 @@ import {
 import axios from "axios";
 const auth = getAuth(app);
 
+const URL = "https://web-production-e7c5.up.railway.app/api/v1"
 export const setProducts = () => (dispatch) => {
   return axios
-    .get("http://localhost:3000/api/v1/products")
+    .get(`${URL}/products`)
     .then((res) => {
       return dispatch({
         type: SET_PRODUCTS,
@@ -62,7 +63,7 @@ export const setProducts = () => (dispatch) => {
 };
 export const setStore = () => (dispatch) => {
   return axios
-    .get("http://localhost:3000/api/v1/products")
+    .get(`${URL}/products`)
     .then((res) => {
       return dispatch({
         type: SET_STORE,
@@ -74,7 +75,7 @@ export const setStore = () => (dispatch) => {
 
 export const setCart = () => (dispatch) => {
   return axios
-    .get("http://localhost:3000/api/v1/carts")
+    .get(`${URL}/carts`)
     .then((res) => {
       return dispatch({
         type: SET_CART,
@@ -86,7 +87,7 @@ export const setCart = () => (dispatch) => {
 
 export const setCategories = () => (dispatch) => {
   return axios
-    .get("http://localhost:3000/api/v1/categories")
+    .get(`${URL}/categories`)
     .then((res) => {
       return dispatch({
         type: SET_CATEGORIES,
@@ -98,7 +99,7 @@ export const setCategories = () => (dispatch) => {
 
 export const setZapatillas = () => (dispatch) => {
   return axios
-    .get("http://localhost:3000/api/v1/categories/2")
+    .get(`${URL}/categories/2`)
     .then((res) => {
       return dispatch({
         type: SET_ZAPATILLAS,
@@ -109,7 +110,7 @@ export const setZapatillas = () => (dispatch) => {
 };
 export const setPantalones = () => (dispatch) => {
   return axios
-    .get("http://localhost:3000/api/v1/categories/1")
+    .get(`${URL}/categories/1`)
     .then((res) => {
       return dispatch({
         type: SET_PANTALONES,
@@ -120,7 +121,7 @@ export const setPantalones = () => (dispatch) => {
 };
 export const setCamisetas = () => (dispatch) => {
   return axios
-    .get("http://localhost:3000/api/v1/categories/3")
+    .get(`${URL}/categories/3`)
     .then((res) => {
       return dispatch({
         type: SET_CAMISETAS,
@@ -132,7 +133,7 @@ export const setCamisetas = () => (dispatch) => {
 export const setZapatillaDetails = (payload) => (dispatch) => {
   return (
     axios
-      .get(`http://localhost:3000/api/v1/products/${payload}`)
+      .get(`${URL}/products/${payload}`)
       .then((res) => {
         console.log("res", res.data);
         return dispatch({
@@ -151,7 +152,7 @@ export const setZapatillaDetails = (payload) => (dispatch) => {
 };
 export const updateProduct = (id, payload) => (dispatch) => {
   return axios
-    .patch(`http://localhost:3000/api/v1/products/${id}`, payload)
+    .patch(`${URL}/products/${id}`, payload)
     .then((res) => {
       console.log("res", res.data);
       return dispatch({
@@ -163,13 +164,12 @@ export const updateProduct = (id, payload) => (dispatch) => {
 };
 export const deleteProduct = (payload) => (dispatch) => {
   return axios
-    .delete(`http://localhost:3000/api/v1/products/${payload}`)
+    .delete(`${URL}/products/${payload}`)
     .catch((error) => console.log(error));
 };
 export const setProductsFilterBySearch = (payload) => (dispatch) => {
-  // try {
   return axios
-    .get(`http://localhost:3000/api/v1/products?name=${payload}`)
+    .get(`${URL}/products?name=${payload}`)
     .then((res) => {
       if (res.data.length > 0) {
         return dispatch({
@@ -184,24 +184,10 @@ export const setProductsFilterBySearch = (payload) => (dispatch) => {
       }
     })
     .catch((error) => console.log(error));
-  // }catch {
 };
-// }
-// export function setProductsFilterBySearch(payload) {
-//   return async function (dispatch) {
-//     try {
-//       await axios.get(
-//         `http://localhost:3000/api/v1/products?name=${payload}`
-//       );
-//       return dispatch({ type: SET_PRODUCT_FILTER_BY_SEARCH, payload: response.data });
-//     } catch {
-//       return alert("Recipe Not Found");
-//     }
-//   };
-// }
 export const setMarcas = (payload) => (dispatch) => {
   return axios
-    .get(`http://localhost:3000/api/v1/marcas/`)
+    .get(`${URL}/marcas/`)
     .then((res) => {
       return dispatch({
         type: SET_MARCAS,
@@ -212,7 +198,7 @@ export const setMarcas = (payload) => (dispatch) => {
 };
 export const setGeneros = (payload) => (dispatch) => {
   return axios
-    .get(`http://localhost:3000/api/v1/generos/`)
+    .get(`${URL}/generos/`)
     .then((res) => {
       return dispatch({
         type: SET_GENEROS,
@@ -223,7 +209,7 @@ export const setGeneros = (payload) => (dispatch) => {
 };
 export const setColors = (payload) => (dispatch) => {
   return axios
-    .get(`http://localhost:3000/api/v1/colors/`)
+    .get(`${URL}/colors/`)
     .then((res) => {
       return dispatch({
         type: SET_COLOR,
@@ -234,7 +220,7 @@ export const setColors = (payload) => (dispatch) => {
 };
 export const setUsers = (payload) => (dispatch) => {
   return axios
-    .get(`http://localhost:3000/api/v1/users/`)
+    .get(`${URL}/users/`)
     .then((res) => {
       return dispatch({
         type: SET_USER_DB,
@@ -246,7 +232,7 @@ export const setUsers = (payload) => (dispatch) => {
 export const setUserDetail = (payload) => (dispatch) => {
   if(payload !== undefined && payload !== null ) {
     return axios
-      .get(`http://localhost:3000/api/v1/users/${payload}`)
+      .get(`${URL}/users/${payload}`)
       .then((res) => {
         return dispatch({
           type: FILTER_ALL_ORDERS_BY_USER,
@@ -312,7 +298,7 @@ export const createUserWithGoogle = (user, usersDb) => {
     return async function (dispatch) {
       try {
         const response = await axios.post(
-          "http://localhost:3000/api/v1/users",
+          `${URL}/users`,
           newUser
         );
         return response;
@@ -352,7 +338,7 @@ export function createProduct(payload) {
   return async function (dispatch) {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/products",
+        `${URL}/products`,
         payload
       );
       return response;
@@ -376,7 +362,7 @@ export function createCart(user, cart) {
     try {
       if (findUser.length === 0) {
         const response = await axios.post(
-          "http://localhost:3000/api/v1/carts/",
+          `${URL}/carts/`,
           newCart
         );
         return response;
@@ -392,7 +378,7 @@ export function addToCart(payload) {
     try {
       console.log(payload);
       const response = await axios.post(
-        "http://localhost:3000/api/v1/carts/add-item",
+        `${URL}/carts/add-item`,
         payload
       );
       console.log(response);
@@ -420,7 +406,7 @@ export const filterCartId = (payload) => ({
 export const setCartId = (payload) => (dispatch) => {
   if (payload !== null) {
     return axios
-      .get(`http://localhost:3000/api/v1/carts/${payload}`)
+      .get(`${URL}/carts/${payload}`)
       .then((res) => {
         return dispatch({
           type: SET_CART_ID,
@@ -436,7 +422,7 @@ export const updateAmountCart = (payload, amount) => {
   return async function (dispatch) {
     try {
       const response = await axios.patch(
-        `http://localhost:3000/api/v1/carts/add-item/${payload}`,
+        `${URL}/carts/add-item/${payload}`,
         newAmount
       );
       return response;
@@ -450,7 +436,7 @@ export const deleteAmountCart = (payload) => {
   return async function (dispatch) {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/api/v1/carts/add-item/${payload}`
+        `${URL}/carts/add-item/${payload}`
       );
       return response;
     } catch (error) {
@@ -464,11 +450,9 @@ export const setProductsFilterByGenero = (payload) => ({
   payload,
 });
 export const setAmountCart = (payload) => (dispatch) => {
-  // console.log('payload',payload)
-  // if (payload !== undefined && payload !== null) {
     if (typeof payload === 'number') {
     return axios
-      .get(`http://localhost:3000/api/v1/carts/${payload}/total-products`)
+      .get(`${URL}/carts/${payload}/total-products`)
       .then((res) => {
         return dispatch({
           type: SET_AMOUNT_CART,
@@ -487,32 +471,27 @@ export function createOrder(id) {
   };
   return async function (dispatch) {
     try {
-      // if (findUser.length === 0) {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/orders",
+        `${URL}/orders`,
         newOrder
       );
       console.log("rta del order create", response);
       return dispatch({
         type: CREATE_ORDER,
-        // payload: response.data.userId,
         payload: response.data.id,
       });
-      // } else return console.log("este usuario ya tiene un carrito");
     } catch (error) {
       console.log(error);
     }
   };
 }
 export function addProductsToOrder(payload) {
-  console.log("la iteracion", payload);
   return async function (dispatch) {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/orders/add-item-order",
+        `${URL}/orders/add-item-order`,
         payload
       );
-      console.log("addProductsToOrder", response);
       return response;
     } catch (error) {
       console.log(error);
@@ -525,7 +504,7 @@ export const setUsuarioActual = (payload) => ({
 })
 export const setOrders = () => (dispatch) => {
   return axios
-  .get("http://localhost:3000/api/v1/orders/")
+  .get(`${URL}/orders/`)
   .then((res) => {
     return dispatch({
       type:SET_ORDER,
@@ -536,7 +515,7 @@ export const setOrders = () => (dispatch) => {
 }
 export const setOrderById = (payload) => (dispatch) => {
   return axios
-  .get(`http://localhost:3000/api/v1/orders/${payload}`)
+  .get(`${URL}/orders/${payload}`)
   .then((res) => {
     return dispatch({
       type:SET_ORDER_BY_ID,
@@ -547,7 +526,7 @@ export const setOrderById = (payload) => (dispatch) => {
 }
 export const setOrderByIdUndelivered = (payload) => (dispatch) => {
   return axios
-  .get(`http://localhost:3000/api/v1/orders/${payload}`)
+  .get(`${URL}/orders/${payload}`)
   .then((res) => {
     return dispatch({
       type:SET_ORDER_BY_ID_UNDELIVERED,
@@ -558,14 +537,7 @@ export const setOrderByIdUndelivered = (payload) => (dispatch) => {
 }
 export const updateOrderDelivered = (id, payload) => (dispatch) => {
   return axios
-    .patch(`http://localhost:3000/api/v1/orders/${id}`, payload)
-    // .then((res) => {
-    //   console.log("res", res.data);
-    //   return dispatch({
-    //     type: SET_ZAPATILLAS_DETAILS,
-    //     payload: res.data,
-    //   });
-    // })
+    .patch(`${URL}/orders/${id}`, payload)
     .catch((error) => console.log(error));
 };
 
