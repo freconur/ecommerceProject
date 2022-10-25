@@ -26,7 +26,6 @@ const initialState = {
 export const ordersReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_ORDER:
-      // console.log("payload", action.payload);
       const filterDelivered = [];
       const filterUndelivered = [];
       action.payload.map((order) => {
@@ -44,7 +43,6 @@ export const ordersReducer = (state = initialState, action) => {
         undelivered: filterUndelivered,
       };
     case SET_ORDER_BY_ID:
-      console.log("itemsFromOrder", action.payload.delivered);
 
       return {
         ...state,
@@ -72,7 +70,6 @@ export const ordersReducer = (state = initialState, action) => {
           orderUndeliveredUser.push(item)
         }
       })
-      console.log("rtaFinal", orderByUser);
       return {
         ...state,
         orderFromUser:orderByUser,
@@ -98,9 +95,6 @@ export const ordersReducer = (state = initialState, action) => {
           fiveOrderOnlyDelivered.push(item)
         }
       })
-      console.log('fiveOrderOnlyDelivered',fiveOrderOnlyDelivered)
-      console.log('ordersDelivered',ordersDelivered)
-      console.log('ordersUndelivered',ordersUndelivered)
       return {
           ...state,
           onlyOrderFromUser: onlyOrders,

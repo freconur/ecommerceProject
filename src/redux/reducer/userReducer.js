@@ -35,7 +35,7 @@ const initialState = {
   kaka: [],
   orderId: null,
   navbarId: null,
-  userIdCurrent:null
+  userIdCurrent: null,
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -80,40 +80,31 @@ export const userReducer = (state = initialState, action) => {
         }
       });
       //aqui estoy filtrando el id del cart 24
-      // // console.log("aa", rta);
       return {
         ...state,
         navbarId: payload.id,
         currentUserDb: rta,
       };
-      case SET_USUARIO_ACTUAL:
-        // console.log('initialState.usersDb',state.usersDb)
-        // console.log('initialState.currentUser',state.currentUser)
-        let findId
-          state.usersDb.find((user) => {
-            if(user.idGoogle === state.currentUser.uid) {
-              findId = user.id
-              // console.log('usuario actual',findId)
-            }
-          });
-        return {...state, userIdCurrent: findId}
+    case SET_USUARIO_ACTUAL:
+      let findId;
+      state.usersDb.find((user) => {
+        if (user.idGoogle === state.currentUser.uid) {
+          findId = user.id;
+        }
+      });
+      return { ...state, userIdCurrent: findId };
     case SET_CURRENT_ID:
-      // // console.log("action.payload", action.payload);
-      if(action.payload !== null || action.payload !== undefined) {
-        let idValue
+      if (action.payload !== null || action.payload !== undefined) {
+        let idValue;
         Object.keys(action.payload).map((key) => {
           if (key === "id") {
             idValue = action.payload[key];
-            // currentId.push(action.payload[key]);
           }
         });
-       
-        // console.log("currentIdReducer", idValue);
         return {
           ...state,
           currentId: idValue,
         };
-
       }
     case SET_AUTH:
       return { ...state };
@@ -129,16 +120,12 @@ export const userReducer = (state = initialState, action) => {
     case SET_CART:
       return { ...state, cart: action.payload };
     case SET_CART_ID:
-      // // console.log("payloaddd", action.payload);
       const infoCart = { ...action.payload.items };
       const productsCart = [];
       Object.keys(infoCart).map((key) => {
         const value = infoCart[key];
         productsCart.push(value);
       });
-      // // console.log("productsCart", productsCart);
-      // prueba.push(action.payload)
-
       return { ...state, cartDetail: action.payload, kaka: productsCart };
     case FILTER_CART_ID:
       return { ...state };
@@ -148,16 +135,15 @@ export const userReducer = (state = initialState, action) => {
         amountCart: action.payload,
       };
     case CREATE_ORDER:
-      // console.log('createOrder',action.payload)
       return {
         ...state,
-        orderId: action.payload
-      }
-      case CLEAN_CART:
-        return {
-          ...state,
-          orderId: null
-        }
+        orderId: action.payload,
+      };
+    case CLEAN_CART:
+      return {
+        ...state,
+        orderId: null,
+      };
     default:
       return state;
   }

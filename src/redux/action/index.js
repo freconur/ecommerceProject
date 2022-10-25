@@ -136,13 +136,11 @@ export const setZapatillaDetails = (payload) => (dispatch) => {
     axios
       .get(`${URL}/products/${payload}`)
       .then((res) => {
-        console.log("res", res.data);
         return dispatch({
           type: SET_ZAPATILLAS_DETAILS,
           payload: res.data,
         });
       })
-      // .catch((error) => console.log(error));
       .catch((error) => {
         return dispatch({
           type: SET_ZAPATILLAS_DETAILS,
@@ -155,7 +153,6 @@ export const updateProduct = (id, payload) => (dispatch) => {
   return axios
     .patch(`${URL}/products/${id}`, payload)
     .then((res) => {
-      console.log("res", res.data);
       return dispatch({
         type: SET_ZAPATILLAS_DETAILS,
         payload: res.data,
@@ -433,7 +430,6 @@ export const updateAmountCart = (payload, amount) => {
   };
 };
 export const deleteAmountCart = (payload) => {
-  console.log("payload", payload);
   return async function (dispatch) {
     try {
       const response = await axios.delete(
@@ -464,9 +460,6 @@ export const setAmountCart = (payload) => (dispatch) => {
   }
 };
 export function createOrder(id) {
-  console.log("id", id);
-  // let idNumber = parseInt(id, 10)
-  // const idNumber = id
   const newOrder = {
     userId: id,
   };
@@ -476,7 +469,6 @@ export function createOrder(id) {
         `${URL}/orders`,
         newOrder
       );
-      console.log("rta del order create", response);
       return dispatch({
         type: CREATE_ORDER,
         payload: response.data.id,

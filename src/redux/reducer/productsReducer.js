@@ -78,15 +78,10 @@ export const productsReducer = (state = initialState, action) => {
       const rta2 = [];
       const cbMarca = action.payload;
       const cbColor = action.payload2;
-      console.log("cbColor", cbColor);
-      // if (cbMarca) {
-
       if (cbMarca.length === 0 && cbColor.length === 0) {
         return { ...state, zapatillas: state.zapatillasCopy };
       }
-
       if (cbColor.length === 0) {
-        console.log("entre en color vacio");
         state.zapatillasCopy.map((item) => {
           cbMarca.map((id) => {
             if (id.toString() === item.marcaId.toString()) {
@@ -97,8 +92,6 @@ export const productsReducer = (state = initialState, action) => {
         return { ...state, zapatillas: rta };
       }
       if (cbMarca.length === 0) {
-        console.log("cbMarca", cbMarca);
-        console.log("entre en marca vacio");
         state.zapatillasCopy.map((item) => {
           cbColor.map((id) => {
             if (id.toString() === item.colorId.toString()) {
@@ -109,8 +102,6 @@ export const productsReducer = (state = initialState, action) => {
         return { ...state, zapatillas: rta };
       }
       if (cbColor.length > 0) {
-        console.log("entre en color con datos");
-
         state.zapatillasCopy.map((item) => {
           cbMarca.map((id) => {
             if (id.toString() === item.marcaId.toString()) {
@@ -118,7 +109,6 @@ export const productsReducer = (state = initialState, action) => {
             }
           });
         });
-
         rta1.map((item) => {
           cbColor.map((id) => {
             if (id.toString() === item.colorId.toString()) {
@@ -140,8 +130,6 @@ export const productsReducer = (state = initialState, action) => {
         return { ...state, zapatillas: state.zapatillasCopy };
       }
       if (cbMarcas.length === 0) {
-        console.log("cbMarcas", cbMarcas);
-        console.log("entre en marca vacio");
         state.zapatillasCopy.map((item) => {
           cbColors.map((id) => {
             if (id.toString() === item.colorId.toString()) {
@@ -152,8 +140,6 @@ export const productsReducer = (state = initialState, action) => {
         return { ...state, zapatillas: rtas };
       }
       if (cbColors.length === 0) {
-        console.log("cbMarcas", cbMarcas);
-        console.log("entre en colores vacio");
         state.zapatillasCopy.map((item) => {
           cbMarcas.map((id) => {
             if (id.toString() === item.marcaId.toString()) {
@@ -164,8 +150,6 @@ export const productsReducer = (state = initialState, action) => {
         return { ...state, zapatillas: rtass };
       }
       if (cbMarcas.length > 0) {
-        console.log("entre en marca con datos");
-
         state.zapatillasCopy.map((item) => {
           cbColors.map((id) => {
             if (id.toString() === item.colorId.toString()) {
@@ -181,7 +165,6 @@ export const productsReducer = (state = initialState, action) => {
             }
           });
         });
-        console.log("rta2s", rta2s);
         return { ...state, zapatillas: rta2s };
       }
     case SET_COLOR:
@@ -223,8 +206,6 @@ export const productsReducer = (state = initialState, action) => {
         generos: action.payload,
       };
     case PRODUCT_TO_CART:
-      console.log("action.payload", action.payload);
-      console.log("initialState.cart", initialState.cart);
       const newCart = initialState.cart;
       newCart.push(action.payload);
       return {

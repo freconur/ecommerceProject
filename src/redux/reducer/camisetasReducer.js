@@ -65,8 +65,6 @@ export const camisetasReducer = (state = initialState, action) => {
         return { ...state, camisetas: state.camisetasCopy };
       }
       if (cbMarcas.length === 0) {
-        console.log("cbMarcas", cbMarcas);
-        console.log("entre en marca vacio");
         state.camisetasCopy.map((item) => {
           cbColors.map((id) => {
             if (id.toString() === item.colorId.toString()) {
@@ -77,8 +75,6 @@ export const camisetasReducer = (state = initialState, action) => {
         return { ...state, camisetas: rtas };
       }
       if (cbColors.length === 0) {
-        console.log("cbMarcas", cbMarcas);
-        console.log("entre en colores vacio");
         state.camisetasCopy.map((item) => {
           cbMarcas.map((id) => {
             if (id.toString() === item.marcaId.toString()) {
@@ -89,7 +85,6 @@ export const camisetasReducer = (state = initialState, action) => {
         return { ...state, camisetas: rtass };
       }
       if (cbMarcas.length > 0) {
-        console.log("entre en marca con datos");
 
         state.camisetasCopy.map((item) => {
           cbColors.map((id) => {
@@ -106,7 +101,6 @@ export const camisetasReducer = (state = initialState, action) => {
             }
           });
         });
-        console.log("rta2s", rta2s);
         return { ...state, camisetas: rta2s };
       }
       case SET_MARCA_FILTER:
@@ -115,15 +109,12 @@ export const camisetasReducer = (state = initialState, action) => {
       const rta2 = [];
       const cbMarca = action.payload;
       const cbColor = action.payload2;
-      console.log("cbColor", cbColor);
-      // if (cbMarca) {
 
       if (cbMarca.length === 0 && cbColor.length === 0) {
         return { ...state, camisetas: state.camisetasCopy };
       }
 
       if (cbColor.length === 0) {
-        console.log("entre en color vacio");
         state.camisetasCopy.map((item) => {
           cbMarca.map((id) => {
             if (id.toString() === item.marcaId.toString()) {
@@ -134,8 +125,6 @@ export const camisetasReducer = (state = initialState, action) => {
         return { ...state, camisetas: rta };
       }
       if (cbMarca.length === 0) {
-        console.log("cbMarca", cbMarca);
-        console.log("entre en marca vacio");
         state.camisetasCopy.map((item) => {
           cbColor.map((id) => {
             if (id.toString() === item.colorId.toString()) {
@@ -146,8 +135,6 @@ export const camisetasReducer = (state = initialState, action) => {
         return { ...state, camisetas: rta };
       }
       if (cbColor.length > 0) {
-        console.log("entre en color con datos");
-
         state.camisetasCopy.map((item) => {
           cbMarca.map((id) => {
             if (id.toString() === item.marcaId.toString()) {
