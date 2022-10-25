@@ -1,0 +1,78 @@
+@import "../Variables.css";
+
+.portalstyles {
+    /* padding: 50px; */
+    background-color: #fff;
+    /* margin: auto; */
+    /* width: 100%; */
+    min-width: 400px;
+    display: block;
+    text-align: center;
+    max-height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px;
+    padding: 30px;
+    position:relative;
+    /* position: fixed; */
+    /* top: 50%;n
+    left: 50%;
+    transform: translate(-50%, 50%); */
+    /* z-index: 100; */
+    /* display: flex; */
+}
+.button_google {
+    background-color: var(--secondaryColor);
+    height: 45px;
+    min-width: 250px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+}
+.button_google:hover {
+    opacity: .7;
+}
+.button_google div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button_google img {
+    margin-right: 10px;
+}
+.popup {
+    /* color: white; */
+    font-size: 1.1rem;
+    color: var(--colorText1);
+    text-align: center;
+}
+.portalOverlay {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .7);
+    align-items: center;
+    z-index: 1000;
+}
+.close_modal {
+    text-align: right;
+    position: absolute;
+    top:10px;
+    right: 30px;
+    text-decoration: underline;
+    color: var(--colorText1);
+    font-size: .6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+}

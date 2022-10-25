@@ -1,0 +1,25 @@
+@import '../../Variables.css';
+.zapatillaCard__image {
+    width: 100%;
+}
+.zapatillaCard {
+    width: 100%;
+}
+.zapatillaCard__link {
+    width: 100%;
+    text-decoration: none;
+    font-size: .9rem;
+    color: var(--colorText1);
+}
+.zapatillaCard__link h3 {
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+.price_container {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+}
+.price_container span {
+    margin: auto 0;
+}

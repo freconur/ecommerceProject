@@ -1,0 +1,63 @@
+@import "../../Variables.css";
+.my_orders {
+  min-height: calc(100vh - 140px);
+}
+.info_order__user {
+  border: 1px solid var(--colorText);
+  color: var(--colorText1);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: initial;
+}
+.info_order__user li {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+.info_order__user img {
+  width: 60px;
+  margin-right: 20px;
+}
+.info_order__user span {
+  /* width: 60px; */
+  margin-right: 20px;
+}
+.name_product__order {
+  width: 50%;
+}
+.orderDeliveredContainer {
+  list-style: none;
+  padding: initial;
+  /* margin: 20px; */
+  /* width: fit-content; */
+  width: 100%;
+  display: grid;
+  /* place-items: center; */
+  place-content: center;
+}
+.orderDelivered__list {
+  margin-bottom: 30px;
+}
+.info_header {
+  margin-bottom: 10px;
+}
+.info_header span {
+  display: block;
+  color: var(--colorText1);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.viewOldOrder {
+  cursor: pointer;
+  color: var(--secondaryColor);
+  text-align: right;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: underline;
+  margin-right: 20px;
+}

@@ -1,0 +1,23 @@
+.prob {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/ecommerce-eacb4.appspot.com/o/ecommerce%2Fheader.jpg?alt=media&token=0ce262c0-0b3a-45ac-b352-7c16f1ddb699");
+}
+
+.header_container {
+    width: 100%;
+    min-height: 100px;
+    max-height: 500px;
+    /* height: 40%; */
+    overflow: hidden;
+    /* position: relative; */
+    margin-bottom: 80px;
+}
+.header_container img {
+    width: 100%;
+    height: 100%;
+    /* position:absolute; */
+    /* bottom: -10px; */
+}
+.mini_header {
+    width: 100%;
+    height: 40px;
+}

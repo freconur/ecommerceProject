@@ -1,0 +1,97 @@
+@import '../../Variables.css';
+.zapatillas {
+    display:grid;
+    grid-template-areas:
+        /* "navbar products"
+        "navbar products"
+        "navbar products" */
+        "navbar products";
+    /* grid-template-columns: minmax(300px,300px) 1fr; */
+    grid-template-columns: 300px 1fr;
+    /* grid-template-rows: 100%;     */
+    margin: auto;
+    max-width: 1290px;
+    width: 100%;
+    place-content: center;
+}
+.zapatillas__list {
+    display: grid;
+    padding: 20px;
+    grid-template-columns: repeat(4,minmax(100px, 250px));
+    gap: 20px;
+    list-style: none;
+    /* padding: initial; */
+    background-color: var(--white);
+}
+/* .zapatillas_title__container {
+    text-align: center;
+    height: 100%;
+} */
+.separador {
+    border-bottom: 2px solid var(--colorText);
+    width: 250px;
+
+}
+.zapatillas__title {
+    display: grid;
+    text-align: center;
+    grid-area: title;
+    color: var(--colorText1);
+    font-size: var(--fontTitle);
+    height: 100%;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    line-height: 90px;
+}
+.zapatillas_list__container {
+    display: grid;
+    grid-area: filterList;
+}
+.navbarLeft__container {
+    display: grid;
+    max-height: 600px;
+    grid-area: navbar;
+    background-color: var(--white);
+    grid-template-areas: 
+    "title"
+    "filterList"
+    ;
+    grid-template-rows: 20% 80%;
+    margin: 20px 10px;
+}
+.zapatillas__container {
+    display: grid;
+    grid-area: products;
+    width: 100%;
+}
+.productSort__container {
+    background-color: var(--white);
+    margin-top: 20px;
+    padding: 15px 5px 15px 20px;
+}
+.label {
+    opacity: .5;
+    font-size: .8rem;
+    margin: initial;
+    padding-left: 4px;
+}
+.select_sort {
+    /* border: 2px solid var(--primaryColor); */
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    background-color: var(--white);
+    font-size: 1.01rem;
+    opacity: .6;
+    font-weight: 600;
+    border-radius: 3px;
+
+}
+.select_sort::-ms-expand {
+    font-size: 10px;
+}
+.option {
+    padding: 10px;
+}

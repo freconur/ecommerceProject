@@ -1,0 +1,17 @@
+.categoryCard__title {
+    text-align: center;
+}
+.category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.category__List {
+    display: grid;
+    /* grid-template-columns: repeat(3,minmax(100px, 250px)); */
+    grid-template-columns: repeat(3,minmax(100px, 350px));
+    gap: 20px;
+    /* list-style: none; */
+    /* padding: initial; */
+    margin-bottom: 100px;
+}

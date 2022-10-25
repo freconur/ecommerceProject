@@ -1,0 +1,13 @@
+@import '../../Variables.css';
+.notFound {
+    width: 100%;
+    background-color: var(--white);
+    display: grid;
+    place-content: center;
+    height: calc(100vh - 215px);
+}
+.icon {
+    color: var(--colorText1);
+    font-size: 2rem;
+    text-align: center;
+}
