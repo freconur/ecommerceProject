@@ -9,7 +9,7 @@ const initialState = {
 export const storeReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_STORE:
-        console.log('products', action.payload)
+        // console.log('products', action.payload)
       return {
         ...state,
         store: action.payload,
