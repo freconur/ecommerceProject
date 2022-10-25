@@ -42,7 +42,7 @@ const OrdersManagement = () => {
   const handleDelivered = (id) => {
     const update = { delivered: true };
     dispatch(updateOrderDelivered(id, update));
-    // window.location.reload(false);
+    window.location.reload(true);
   };
   // console.log('undelivered',undelivered)
   console.log('orderDetail',orderDetail)
