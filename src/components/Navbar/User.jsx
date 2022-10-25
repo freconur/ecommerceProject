@@ -33,7 +33,7 @@ const User = ({ letterUser, nameUser }) => {
             <li>
               <Link className="user_list" onClick={() => setActiveMenuUser(!activeMenuUser)} to='/user'>
                 <FontAwesomeIcon icon={user} className="menu_user__icon" />
-                Mi perfil
+                Mi Dashboard
               </Link>
             </li>
             <li>
