@@ -1,7 +1,9 @@
 .categoryCard {
     position: relative;
-    width: 350px;
+    /* width: 350px; */
+    width: 100%;
     height:250px;
+    /* height:100%; */
     text-decoration: none;
     overflow: hidden;
     border-radius: 10px;
@@ -50,4 +52,29 @@
     font-size: 2.2rem;
     text-transform: uppercase;
     font-weight: 800;
+}
+@media ( max-width: 650px) {
+    .categoryCard {
+        height: 200px;
+    }
+    .categoryCard__title  {
+        font-size: 1.9rem;
+    }
+}
+@media ( max-width: 550px) {
+    .categoryCard {
+        height: 200px;
+    }
+    .categoryCard__title  {
+        font-size: 1.3rem;
+    }
+    
+}
+@media ( max-width: 400px) {
+    .categoryCard {
+        height: 150px;
+    }
+    .categoryCard__title  {
+        font-size: 1rem;
+    }
 }

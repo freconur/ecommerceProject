@@ -59,7 +59,7 @@ const Cart = () => {
       };
       dispatch(addProductsToOrder(itemToOrder));
     });
-    dispatch(cleanOrderId())
+    dispatch(cleanOrderId());
   }
   const cartSort = kaka.sort((a, b) => {
     if (a.name < b.name) return -1;
@@ -118,20 +118,39 @@ const Cart = () => {
             {cartSort.map((cart, index) => (
               <li key={index} className="cart__container">
                 <div className="product">
+                  <div className="info_product_cart__container">
+
                   <Link to={`/product-detail/${cart.id}`} className="details">
                     <div className="cart_image__container">
                       <span>{cart.CartProduct.amount}</span>
                       <img src={cart.image} alt={cart.name} />
                     </div>
-                    <div className="title">
+
+                    {/* ///esto aparecera cuando estemos en el en modo responsive */}
+                    <div className="info_cart__responsive">
+                      <div className="title">
+                        <p>{cart.marca.name}</p>
+                        <h2>{cart.name}</h2>
+                      </div>
+                      <div className="price">
+                        <span>Online</span>
+                        <p>S/ {cart.price}</p>
+                      </div>
+                    </div>
+                    {/* ///esto aparecera cuando estemos en el en modo responsive */}
+
+                    <div className="title disabled">
                       <p>{cart.marca.name}</p>
                       <h2>{cart.name}</h2>
                     </div>
+                    <div className="price disabled">
+                      <span>Online</span>
+                      <p>S/ {cart.price}</p>
+                    </div>
+                    
                   </Link>
-                  <div className="price">
-                    <span>Online</span>
-                    <p>S/ {cart.price}</p>
-                  </div>
+                  <div className="counter__container">
+
                   <div className="counterCart">
                     <button
                       name="less"
@@ -153,8 +172,25 @@ const Cart = () => {
                       +
                     </button>
                   </div>
+
+                  <div className="cart_product__deletec--container delete_responsive">
+                  <div className="icon_delete">
+                    <FontAwesomeIcon icon={trash} />
+                    <button
+                      className="cart_product__delete"
+                      name="delete"
+                      value={cart.CartProduct.id}
+                      onClick={handleDeleteCart}
+                    >
+                      Eliminar
+                    </button>
+                  </div>
                 </div>
-                <div className="cart_product__deletec--container">
+
+                  </div>
+                  </div>
+                </div>
+                <div className="cart_product__deletec--container ">
                   <div className="icon_delete">
                     <FontAwesomeIcon icon={trash} />
                     <button
@@ -170,7 +206,7 @@ const Cart = () => {
               </li>
             ))}
           </ul>
-          <div>
+          <div className="template-total-container">
             <div className="sumary-template-holder">
               <h4>Resumen de compra</h4>
               <div className="subtotal">
@@ -184,9 +220,11 @@ const Cart = () => {
             </div>
             {/* <OrderButton handleCreateOrder={handleCreateOrder} /> */}
             {/* <Link to="/mis-pedidos"> */}
+            <div className="order_button__container">
               <button onClick={handleCreateOrder} className="order_button">
                 Ir a comprar
               </button>
+            </div>
             {/* </Link> */}
           </div>
         </div>

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCategories } from "../../redux/action";
 import { CategoryCard } from "../CategoryCard";
 import './category.css'
+import './category-responsive.css'
 const Category = () => {
   const { categories } = useSelector(rootReducer => rootReducer.productsReducer);
   const dispatch = useDispatch();

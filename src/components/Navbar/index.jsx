@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser as user } from "@fortawesome/free-regular-svg-icons";
 import { faMagnifyingGlass as search } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping as carts } from "@fortawesome/free-solid-svg-icons";
-
 import "./navabar.css";
+import './navbar-responsive.css'
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import app from "../../firebase/firebase.config";
@@ -72,6 +72,11 @@ const Navbar = () => {
               <img
                 className="navbar__brand"
                 src="https://firebasestorage.googleapis.com/v0/b/ecommerce-eacb4.appspot.com/o/wikzon.png?alt=media&token=8e9b1cd4-6ebb-46d7-ab3d-1893c2e73f55"
+                alt=""
+              />
+              <img
+                className="brand__responsive"
+                src="https://firebasestorage.googleapis.com/v0/b/ecommerce-eacb4.appspot.com/o/ecommerce%2Flogo-wz.png?alt=media&token=d0543953-17db-43e3-a22a-947d560e980b"
                 alt=""
               />
             </Link>

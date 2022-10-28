@@ -1,0 +1,7 @@
+@media ( max-width: 864px) {
+    .category__List {
+        grid-template-columns: repeat(2,minmax(100px, 300px));
+        grid-gap: 20px
+
+    }
+}

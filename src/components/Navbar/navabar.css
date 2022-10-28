@@ -22,6 +22,7 @@
 .search_input__container {
   display: flex;
   position: relative;
+  width: 100%;
 }
 .search_input__container button {
   background: none;
@@ -112,7 +113,7 @@
 .navbar_input {
   display: grid;
   grid-area: searchInput;
-  min-width: 400px;
+  /* min-width: 300px; */
   /* width: 700px; */
   width: 100%;
   height: 10px;
@@ -182,4 +183,8 @@
 color: var(--colorText1);
   text-decoration: none;
   font-weight: 600;
+}
+.brand__responsive {
+  display: none;
+  max-width: 70px;
 }
