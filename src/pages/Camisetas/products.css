@@ -76,6 +76,7 @@
 @media (max-width: 1124px) {
   .products__list {
     grid-template-columns: repeat(3, minmax(100px, 350px));
+    background-color: initial;
   }
 }
 

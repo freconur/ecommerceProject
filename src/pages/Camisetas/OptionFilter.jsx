@@ -54,7 +54,6 @@ const OptionFilter = ({camisetas,setCheckboxClean, setActiveOption, activeOption
       setCheckValueMarca(newCheckedMarcas);
       dispatch(setMarcaFilter(newCheckedMarcas, newCheckedColor));
     }
-    console.log('activeOption',activeOption)
   };
   return (
     <React.Fragment>
