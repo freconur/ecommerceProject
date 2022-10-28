@@ -1,6 +1,7 @@
 @import "../../Variables.css";
 .my_orders {
   min-height: calc(100vh - 140px);
+  margin: 10px;
 }
 .info_order__user {
   border: 1px solid var(--colorText);
@@ -60,4 +61,13 @@
   font-weight: 600;
   text-decoration: underline;
   margin-right: 20px;
+}
+@media (max-width: 610px) { 
+  .orderDeliveredContainer {
+    display: initial;
+  }
+  .info_order__user {
+    font-size: .7rem;
+    border-radius: 5px;
+  }
 }
