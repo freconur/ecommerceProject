@@ -98,3 +98,25 @@
   margin: auto;
   line-height: 90px;
 }
+@media (max-width: 940px) {
+  /* .products_list__container{
+    display: none;
+  } */
+  .sidebar_container {
+    position: relative;
+  }
+  .products_list__container{
+    position: absolute;
+    left: -280px;
+  }
+  .active_option_filter {
+    left: 0px;
+    background: var(--white);
+    top: 84px;
+    right: 0px;
+    bottom: -643px;
+  }
+  .sidebar__title {
+    display: none;
+  }
+ }

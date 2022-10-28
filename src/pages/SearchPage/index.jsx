@@ -7,7 +7,7 @@ import {
   setStore,
 } from "../../redux/action";
 import { ZapatillasCard } from "../../components/ZapatillasCard";
-import "./zapatillas.css";
+import "../Camisetas/products.css";
 import OptionFilter from "./OptionFilter";
 import { NotFound } from "../../components/NotFound";
 const SearchPage = () => {

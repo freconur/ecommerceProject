@@ -11,7 +11,7 @@ import "./optionFilter.css";
 import ColorSidebar from "./ColorSidebar";
 import MarcaSidebar from "./MarcaSidebar";
 import CategorySidebar from "./CategorySidebar";
-const OptionFilter = ({camisetas,setCheckboxClean}) => {
+const OptionFilter = ({camisetas,setCheckboxClean, setActiveOption, activeOption}) => {
   const [reducerValue, forceUpdate] = useReducer((x) => x + 1, 0);
 
   const { marcas, colors, generos } = useSelector(rootReducer => rootReducer.productsReducer);
@@ -54,7 +54,7 @@ const OptionFilter = ({camisetas,setCheckboxClean}) => {
       setCheckValueMarca(newCheckedMarcas);
       dispatch(setMarcaFilter(newCheckedMarcas, newCheckedColor));
     }
-    
+    console.log('activeOption',activeOption)
   };
   return (
     <React.Fragment>
@@ -63,7 +63,11 @@ const OptionFilter = ({camisetas,setCheckboxClean}) => {
           Camisetas
           <div className="separador"> </div>
         </h2>
-        <div className="products_list__container">
+        <div 
+        // onClick={() => setActiveOption(activeOption)}
+        // className=" products_list__container--active"
+        className={`products_list__container ${activeOption && "active_option_filter"}`}
+        >
           <ul className="marcas__list">
             <CategorySidebar
               sidebarGeneros={sidebarGeneros}
