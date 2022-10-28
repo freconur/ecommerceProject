@@ -5,7 +5,7 @@
     background-color: #fff;
     /* margin: auto; */
     /* width: 100%; */
-    min-width: 400px;
+    /* min-width: 400px; */
     display: block;
     text-align: center;
     max-height: 100%;
@@ -24,7 +24,7 @@
 .button_google {
     background-color: var(--secondaryColor);
     height: 45px;
-    min-width: 250px;
+    /* min-width: 250px; */
     border-radius: 10px;
     outline: none;
     border: none;

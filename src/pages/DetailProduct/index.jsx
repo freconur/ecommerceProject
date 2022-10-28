@@ -11,10 +11,12 @@ import {
   setZapatillaDetails,
 } from "../../redux/action";
 import "./detailProduct.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const DetailProduct = () => {
   const [reducerValue, forceUpdate] = useReducer((x) => x + 1, 0);
 
-  const [amountValue, setAmountValue] = useState(1)
+  const [amountValue, setAmountValue] = useState(1);
   const { productId } = useParams();
   const { zapatillasDetail } = useSelector(
     (rootReducer) => rootReducer.productsReducer
@@ -30,7 +32,7 @@ const DetailProduct = () => {
   const rta = usersDb.find((user) => user.idGoogle === currentUs.uid);
 
   useEffect(() => {
-    dispatch(setUserCurrent(rta))
+    dispatch(setUserCurrent(rta));
     dispatch(setZapatillaDetails(productId));
     dispatch(setUsers());
     dispatch(setCart());
@@ -57,19 +59,20 @@ const DetailProduct = () => {
     };
     dispatch(createCart(user, cart));
     dispatch(addToCart(addProductCart));
-    dispatch(setAmountCart(currentUserDb))
-    forceUpdate()
+    dispatch(setAmountCart(currentUserDb));
+    forceUpdate();
+    toast('Genial!, se agrego un producto a tu carrito de compras')
   };
   const handleAmount = (e) => {
-    if(e.target.name === 'plus') {
-      setAmountValue(amountValue + 1)
+    if (e.target.name === "plus") {
+      setAmountValue(amountValue + 1);
     }
-    if((e.target.name === 'less')) {
-      if(amountValue > 1) {
-        setAmountValue(amountValue - 1)
+    if (e.target.name === "less") {
+      if (amountValue > 1) {
+        setAmountValue(amountValue - 1);
       }
     }
-  }
+  };
   return (
     <div className="DetailProduct">
       <div className="image_product">
@@ -108,13 +111,29 @@ const DetailProduct = () => {
         </div>
         <div className="add_to_cart">
           <div className="counter">
-            <button name="less"  onClick={handleAmount}>-</button>
+            <button name="less" onClick={handleAmount}>
+              -
+            </button>
             <input disabled placeholder={amountValue} />
-            <button name="plus" onClick={handleAmount}>+</button>
+            <button name="plus" onClick={handleAmount}>
+              +
+            </button>
           </div>
           <button onClick={handleAddToCart} className="add_to_cart__button">
             Anadir al carrito
           </button>
+            <ToastContainer 
+            position="top-center"
+            autoClose={1000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            />
         </div>
         {/* <p>{zapatillasDetail.description}</p>
         <p>{category.name}</p> */}

@@ -21,6 +21,7 @@ import {
   updateAmountCart,
 } from "../../redux/action";
 import "./cart.css";
+import swal from 'sweetalert';
 import { Link, useNavigate } from "react-router-dom";
 const Cart = () => {
   let total = 0;
@@ -48,7 +49,18 @@ const Cart = () => {
   }, [currentUserDb, cart]);
   const navigate = useNavigate();
   const handleCreateOrder = () => {
-    dispatch(createOrder(userIdCurrent));
+    swal({
+      title: "Genial estas a punto de crear una orden compra",
+      text : "Deseas continuar?",
+      icon: "warning",
+      buttons: ["No", "Si"]
+    }).then(rta => {
+      if(rta) {
+        swal({text: "En hora buena se ha generado tu orden de compra, ve a tus pedidos para mas informacion", icon: "success"})
+        dispatch(createOrder(userIdCurrent));
+      }
+    })
+
   };
   if (orderId) {
     kaka.map((item) => {
