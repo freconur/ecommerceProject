@@ -116,8 +116,8 @@ const DetailProduct = () => {
             Anadir al carrito
           </button>
         </div>
-        <p>{zapatillasDetail.description}</p>
-        <p>{category.name}</p>
+        {/* <p>{zapatillasDetail.description}</p>
+        <p>{category.name}</p> */}
       </div>
     </div>
   );
