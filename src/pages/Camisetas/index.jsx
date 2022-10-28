@@ -9,7 +9,7 @@ import "./products.css";
 import OptionFilter from "./OptionFilter";
 import { NotFound } from "../../components/NotFound";
 const Camisetas = () => {
-  const [activeOption, setActiveOption] = useState(false)
+  const [activeOption, setActiveOption] = useState(false);
   const [checkboxClean, setCheckboxClean] = useState(null);
   const { camisetas } = useSelector(
     (rootReducer) => rootReducer.camisetasReducer
@@ -25,24 +25,25 @@ const Camisetas = () => {
   const onchangeOrderName = (e) => {
     return dispatch(setSortByName(e.target.value));
   };
-  console.log('activeOption',activeOption)
+  console.log("activeOption", activeOption);
 
   return (
     <div className="products">
       <div className="navbarLeft__container">
         <OptionFilter
-        setActiveOption={setActiveOption}
-        activeOption={activeOption}
+          setActiveOption={setActiveOption}
+          activeOption={activeOption}
           camisetas={camisetas}
           setCheckboxClean={setCheckboxClean}
         />
         {/* //////////solo cuando sea resposive/////////////// */}
         <div className="filter_container_response">
           <div className="container_fixed">
-            <div 
-            onClick={() => setActiveOption(!activeOption)}
-            className="filter_button_response">
-              <div >
+            <div
+              onClick={() => setActiveOption(!activeOption)}
+              className="filter_button_response"
+            >
+              <div>
                 <FontAwesomeIcon icon={filter} />
                 <span>Filtrar</span>
               </div>

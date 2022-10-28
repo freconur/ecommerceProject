@@ -11,11 +11,18 @@ import "./optionFilter.css";
 import ColorSidebar from "./ColorSidebar";
 import MarcaSidebar from "./MarcaSidebar";
 import CategorySidebar from "./CategorySidebar";
-const OptionFilter = ({camisetas,setCheckboxClean, setActiveOption, activeOption}) => {
+const OptionFilter = ({
+  camisetas,
+  setCheckboxClean,
+  setActiveOption,
+  activeOption,
+}) => {
   const [reducerValue, forceUpdate] = useReducer((x) => x + 1, 0);
 
-  const { marcas, colors, generos } = useSelector(rootReducer => rootReducer.productsReducer);
-  
+  const { marcas, colors, generos } = useSelector(
+    (rootReducer) => rootReducer.productsReducer
+  );
+
   const dispatch = useDispatch();
   const [sidebarMarcas, setSidebarMarcas] = useState(true);
   const [sidebarColors, setSidebarColors] = useState(true);
@@ -27,8 +34,8 @@ const OptionFilter = ({camisetas,setCheckboxClean, setActiveOption, activeOption
     dispatch(setMarcas());
     dispatch(setColors());
     dispatch(setGeneros());
-  }, [dispatch,reducerValue]);
-  
+  }, [dispatch, reducerValue]);
+
   const handleCheckValue = (e) => {
     const value = e.target.value;
     const name = e.target.name;
@@ -62,11 +69,8 @@ const OptionFilter = ({camisetas,setCheckboxClean, setActiveOption, activeOption
           Camisetas
           <div className="separador"> </div>
         </h2>
-        <div 
-        // onClick={() => setActiveOption(activeOption)}
-        // className=" products_list__container--active"
-        className={`products_list__container ${activeOption && "active_option_filter"}`}
-        >
+        <div className={`products_list__container ${activeOption && "active_option_filter"}`}>
+        {/* <div> */}
           <ul className="marcas__list">
             <CategorySidebar
               sidebarGeneros={sidebarGeneros}

@@ -34,8 +34,7 @@
     "filterList";
   grid-template-rows: 20% 80%;
   margin: 20px 10px;
-  position: sticky;
-  top: 0;
+  
 }
 .products__container {
   display: grid;
@@ -72,7 +71,12 @@
 .option {
   padding: 10px;
 }
-
+.container_fixed {
+  display: none;
+}
+.filter_container_response {
+  display: none;
+}
 @media (max-width: 1124px) {
   .products__list {
     grid-template-columns: repeat(3, minmax(100px, 350px));
@@ -105,10 +109,12 @@
     grid-area: productres;
   }
   .navbarLeft__container {
-
+    position: sticky;
+    top: 0;
     margin: 0 0;
   }
   .filter_container_response {
+    display: initial;
     margin-bottom: 85px;
     /* border: 2px solid var(--colorText1); */
     border-radius: 10px;
