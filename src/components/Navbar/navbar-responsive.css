@@ -2,6 +2,9 @@
   .menu_user {
     right: 0;
   }
+  .active_responsive {
+    display: none;
+  }
  }
 @media (max-width: 864px) {
   .brand__responsive {

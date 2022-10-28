@@ -31,7 +31,7 @@ const User = ({ letterUser, nameUser }) => {
           <ul className="menu_user">
             <li className="menu_user__hello">Hola {nameUser}!</li>
             <li>
-              <Link className="user_list" onClick={() => setActiveMenuUser(!activeMenuUser)} to='/user'>
+              <Link className="user_list active_responsive" onClick={() => setActiveMenuUser(!activeMenuUser)} to='/user'>
                 <FontAwesomeIcon icon={user} className="menu_user__icon" />
                 Mi Dashboard
               </Link>
