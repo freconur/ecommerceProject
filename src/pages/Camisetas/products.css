@@ -162,5 +162,6 @@
   }
   .productSort__container {
     margin: initial;
+    /* display: none; */
   }
 }

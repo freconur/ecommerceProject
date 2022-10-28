@@ -11,7 +11,7 @@ import "../Camisetas/optionFilter.css";
 import ColorSidebar from "./ColorSidebar";
 import MarcaSidebar from "./MarcaSidebar";
 import CategorySidebar from "./CategorySidebar";
-const OptionFilter = ({pantalones}) => {
+const OptionFilter = ({pantalones, activeOption}) => {
   const { marcas } = useSelector(rootReducer => rootReducer.productsReducer);
   const { colors } = useSelector(rootReducer => rootReducer.productsReducer);
   const { generos } = useSelector(rootReducer => rootReducer.productsReducer);
@@ -62,7 +62,8 @@ const OptionFilter = ({pantalones}) => {
           Pantalones
           <div className="separador"> </div>
         </h2>
-        <div className="products_list__container">
+        {/* <div className="products_list__container"> */}
+        <div className={`products_list__container ${activeOption && "active_option_filter"}`}>
           <ul className="marcas__list">
             <CategorySidebar
               sidebarGeneros={sidebarGeneros}
