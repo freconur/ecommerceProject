@@ -10,9 +10,11 @@ import {
   setUsers,
   setZapatillaDetails,
 } from "../../redux/action";
+import swal from "sweetalert";
 import "./detailProduct.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { signInWithEmailAndPassword } from "firebase/auth";
 const DetailProduct = () => {
   const [reducerValue, forceUpdate] = useReducer((x) => x + 1, 0);
 
@@ -39,29 +41,36 @@ const DetailProduct = () => {
   }, [currentUser, currentUserDb, reducerValue]);
 
   const handleAddToCart = () => {
-    const arrayUser = [];
-    let arrayCart = null;
-    const user = usersDb.find((userDb) => userDb.idGoogle === currentUs.uid);
-    usersDb.find((userDb) => {
-      if (userDb.idGoogle === currentUs.uid) {
-        arrayUser.push(userDb.id);
-      }
-    });
-    cart.find((cart) => {
-      if (cart.userId === arrayUser[0]) {
-        arrayCart = cart.id;
-      }
-    });
-    const addProductCart = {
-      cartId: arrayCart,
-      productCartId: Number(productId),
-      amount: amountValue,
-    };
-    dispatch(createCart(user, cart));
-    dispatch(addToCart(addProductCart));
-    dispatch(setAmountCart(currentUserDb));
-    forceUpdate();
-    toast('Genial!, se agrego un producto a tu carrito de compras')
+    if (currentUser === null) {
+      swal({
+        text: "Debes de estar logeado para agregar productos al carrito de compras",
+        icon: "warning",
+      });
+    } else {
+      const arrayUser = [];
+      let arrayCart = null;
+      const user = usersDb.find((userDb) => userDb.idGoogle === currentUs.uid);
+      usersDb.find((userDb) => {
+        if (userDb.idGoogle === currentUs.uid) {
+          arrayUser.push(userDb.id);
+        }
+      });
+      cart.find((cart) => {
+        if (cart.userId === arrayUser[0]) {
+          arrayCart = cart.id;
+        }
+      });
+      const addProductCart = {
+        cartId: arrayCart,
+        productCartId: Number(productId),
+        amount: amountValue,
+      };
+      dispatch(createCart(user, cart));
+      dispatch(addToCart(addProductCart));
+      dispatch(setAmountCart(currentUserDb));
+      forceUpdate();
+      toast("Genial!, se agrego un producto a tu carrito de compras");
+    }
   };
   const handleAmount = (e) => {
     if (e.target.name === "plus") {
@@ -122,7 +131,7 @@ const DetailProduct = () => {
           <button onClick={handleAddToCart} className="add_to_cart__button">
             Anadir al carrito
           </button>
-            <ToastContainer 
+          <ToastContainer
             position="top-center"
             autoClose={1000}
             hideProgressBar={false}
@@ -133,7 +142,7 @@ const DetailProduct = () => {
             draggable
             pauseOnHover
             theme="light"
-            />
+          />
         </div>
         {/* <p>{zapatillasDetail.description}</p>
         <p>{category.name}</p> */}
