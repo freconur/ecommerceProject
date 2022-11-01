@@ -14,7 +14,7 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+// Your web app's Firebase configuration holi
 const firebaseConfig = {
   apiKey: "AIzaSyCo23GOUMZ8NWlK6TkKD_5TFMFFuFQdw1I",
   authDomain: "ecommerce-eacb4.firebaseapp.com",
