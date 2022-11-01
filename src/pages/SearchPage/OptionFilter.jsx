@@ -12,7 +12,7 @@ import "./optionFilter.css";
 import ColorSidebar from "./ColorSidebar";
 import MarcaSidebar from "./MarcaSidebar";
 import CategorySidebar from "./CategorySidebar";
-const OptionFilter = () => {
+const OptionFilter = ({activeOption}) => {
   const { marcas } = useSelector(rootReducer => rootReducer.productsReducer);
   const { colors } = useSelector(rootReducer => rootReducer.productsReducer);
   const { generos } = useSelector(rootReducer => rootReducer.productsReducer);
@@ -62,12 +62,12 @@ const OptionFilter = () => {
   };
   return (
     <React.Fragment>
-      <div className="pruebita">
-        <h2 className="zapatillas__title">
+      <div className="sidebar_container">
+        <h2 className="sidebar__title">
           Busqueda
           <div className="separador"> </div>
         </h2>
-        <div className="zapatillas_list__container">
+        <div className={`products_list__container ${activeOption && "active_option_filter"}`}>
           <ul className="marcas__list">
             <CategorySidebar
               sidebarGeneros={sidebarGeneros}
