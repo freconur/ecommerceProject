@@ -103,7 +103,7 @@
     display: none;
   } */
   .sidebar_container {
-    position: relative;
+    position: relative;             
   }
   .products_list__container{
     position: absolute;
