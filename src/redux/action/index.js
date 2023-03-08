@@ -50,8 +50,8 @@ import axios from "axios";
 const auth = getAuth(app);
 
 // const URL = "http://localhost:3000/api/v1/"
-// const URL = "https://web-production-e7c5.up.railway.app/api/v1"
-const URL = "http://44.198.19.214/api/v1"
+const URL = "https://web-production-e7c5.up.railway.app/api/v1"
+// const URL = "http://44.198.19.214/api/v1"
 export const setProducts = () => (dispatch) => {
   return axios
     .get(`${URL}/products`)
